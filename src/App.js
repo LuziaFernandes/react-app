@@ -4,7 +4,9 @@ import './App.css';
 function App() {
   return (
     <div className="App">
+      
  <div className= "container">
+ <img src="https://www.weather.shecodes.io/images/logo.png" alt="logotipo" width="150px" />
 <div className= "weatherApp">
 <form>
 <div className="row">
@@ -15,17 +17,18 @@ function App() {
 
 <div className="weatherInformation">
 <div className="row">
+
 <div className="col-6 info-current-location">
 <h1>Porto</h1>
+<div class="emoji"><img src="http://www.openweathermap.org/img/wn/10d@2x.png" alt="weather-emoji" /> </div>
 <p> 
 Description: clear sky
 <br/>
 Humidity: <span className="values"> </span> 19%, Wind: <span className="values"> </span> 10 Km/h
 </p>
 </div>
-<div className="col-4 currentTemperature" >
-        <span>19 ºC</span>
-    </div>
+
+<div className="col-6 currentTemperature" >19 ºC</div>
 </div>
 </div>
 
@@ -36,27 +39,32 @@ Humidity: <span className="values"> </span> 19%, Wind: <span className="values">
 
 <div className= "col-2"> 
 <div className="day"> Mon </div>
+<div class="emoji"><img src="http://www.openweathermap.org/img/wn/10d@2x.png" alt="weather-emoji" /> </div>
 <div className="temperatures-of-day"><span className="temperature-day-max"> 32º </span><span className="temperature-day-min"> 22º </span></div>
 </div>
 
 
 <div className= "col-2"> 
 <div className="day"> Tue </div>
+<div class="emoji"><img src="http://www.openweathermap.org/img/wn/10d@2x.png" alt="weather-emoji" /> </div>
 <div className="temperatures-of-day"><span className="temperature-day-max"> 32º </span><span className="temperature-day-min"> 22º </span></div>
 </div>
 
 <div className= "col-2"> 
 <div className="day"> Wed </div>
+<div class="emoji"><img src="http://www.openweathermap.org/img/wn/10d@2x.png" alt="weather-emoji" /> </div>
 <div className="temperatures-of-day"><span className="temperature-day-max"> 32º </span><span className="temperature-day-min"> 22º </span></div>
 </div>
 
 <div className= "col-2"> 
 <div className="day"> Thu </div>
+<div class="emoji"><img src="http://www.openweathermap.org/img/wn/10d@2x.png" alt="weather-emoji" /> </div>
 <div className="temperatures-of-day"><span className="temperature-day-max"> 32º </span><span className="temperature-day-min"> 22º </span></div>
 </div>
 
 <div className= "col-2"> 
 <div className="day"> Fri </div>
+<div class="emoji"><img src="http://www.openweathermap.org/img/wn/10d@2x.png" alt="weather-emoji" /> </div>
 <div className="temperatures-of-day"><span className="temperature-day-max"> 32º </span><span className="temperature-day-min"> 22º </span></div>
 </div>
 
