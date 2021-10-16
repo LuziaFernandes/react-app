@@ -1,59 +1,77 @@
-import logo from './logo.svg';
+
 import './App.css';
 
 function App() {
   return (
     <div className="App">
- <div className="container">
-      <div className="row">
-        <div className=" col heading">
-          MyWheather 
-        </div>
-        <div className=" col form">
-        <form className="col-8 searchBox"  id ="input-city">
-          <input type="text" placeholder="Enter a city" id ="input-city-go"/>
-          <input type="submit"  value="Go!"/>
-        </form>
-      </div>
-      <div className=" col ">
-          <button className="col  searchBox" >Current Location</button>
-        </div>
-      </div>
-  </div>
-        <header>
-   
-    <h1> Porto </h1>
-    <br/>
-    <h2 >Tuesday, 3 of July 2021</h2>
-    <br/>
-    <h3> <span>18</span> <a  href="#">ºC</a> | <a  href="#">ºF</a><span className="temperatureNow" >    Current Temperature at  <span> 16h00 </span> </span>  </h3>
-    
-<ul>
-  <li>7ºC/13ºC <br/> <strong> Morning</strong></li>
-  <li>7ºC/13ºC <br/> <strong>Afternoon</strong></li>
-  <li>7ºC/13ºC <br/> <strong>Evening</strong></li>
-</ul>
-    </header>
-  <div className="row">
-    <div className="col ">  <br/>Next 5 Days:
-          </div>
-  
-    <div className="col dayNumber">
-      1 <br/> 13º/18º <br/> 🌞
+ <div className= "container">
+<div className= "weatherApp">
+<form>
+<div className="row">
+<div class="col-9"> <input type="search" placeholder="Search a city ... " className="form-control search-input" autocomplete="off" /></div>
+<div class="col-3"><input type="submit" value="Search" className="btn btn-primary w-100" /></div>
+</div>
+</form>
+
+<div className="weatherInformation">
+<div className="row">
+<div className="col-6 info-current-location">
+<h1>Porto</h1>
+<p> 
+Description: clear sky
+<br/>
+Humidity: <span className="values"> </span> 19%, Wind: <span className="values"> </span> 10 Km/h
+</p>
+</div>
+<div className="col-4 currentTemperature" >
+        <span>19 ºC</span>
     </div>
-    <div className="col dayNumber">
-      2 <br/> 13º/18º <br/> 🌨
-    </div>
-    <div className="col dayNumber">
-      3 <br/> 13º/18º <br/> 🌦
-    </div>
-    <div className="col dayNumber">
-      4 <br/> 13º/18º <br/> 🌤
-    </div>
-    <div className="col dayNumber">
-      5 <br/> 13º/18º <br/> ⛈
-    </div>
-  </div>
+</div>
+</div>
+
+
+<div className="next-five-days">
+
+<div className ="row">
+
+<div className= "col-2"> 
+<div className="day"> Mon </div>
+<div className="temperatures-of-day"><span className="temperature-day-max"> 32º </span><span className="temperature-day-min"> 22º </span></div>
+</div>
+
+
+<div className= "col-2"> 
+<div className="day"> Tue </div>
+<div className="temperatures-of-day"><span className="temperature-day-max"> 32º </span><span className="temperature-day-min"> 22º </span></div>
+</div>
+
+<div className= "col-2"> 
+<div className="day"> Wed </div>
+<div className="temperatures-of-day"><span className="temperature-day-max"> 32º </span><span className="temperature-day-min"> 22º </span></div>
+</div>
+
+<div className= "col-2"> 
+<div className="day"> Thu </div>
+<div className="temperatures-of-day"><span className="temperature-day-max"> 32º </span><span className="temperature-day-min"> 22º </span></div>
+</div>
+
+<div className= "col-2"> 
+<div className="day"> Fri </div>
+<div className="temperatures-of-day"><span className="temperature-day-max"> 32º </span><span className="temperature-day-min"> 22º </span></div>
+</div>
+
+</div>
+</div>
+
+
+
+
+<footer>
+<div>This project was coded by Luzia Fernandes at <a href="https://www.shecodes.io/"> SheCodes </a> and is <a href="https://github.com/LuziaFernandes/VanillaWeatherapp"> open-sourced on GitHub</a> and hosted on 
+<a href="https://pensive-wilson-c9f909.netlify.app/">Netlify</a></div>
+</footer>
+</div>
+</div>
     </div>
   );
 }
