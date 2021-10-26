@@ -10,7 +10,7 @@ function App() {
 <div className= "weatherApp">
 <form>
 <div className="row">
-<div class="col-9"> <input type="search" placeholder="Search a city ... " className="form-control search-input" autocomplete="off" /></div>
+<div class="col-9"> <input type="search" placeholder="Search a city ... " className="form-control search-input" autocomplete="off" autoFocus="on" /></div>
 <div class="col-3"><input type="submit" value="Search" className="btn btn-primary w-100" /></div>
 </div>
 </form>
