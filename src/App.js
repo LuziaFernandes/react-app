@@ -75,8 +75,8 @@ Humidity: <span className="values"> </span> 19%, Wind: <span className="values">
 
 
 <footer>
-<div>This project was coded by Luzia Fernandes at <a href="https://www.shecodes.io/"> SheCodes </a> and is <a href="https://github.com/LuziaFernandes/react-appp"> open-sourced on GitHub</a> and hosted on 
-<a href="https://pedantic-goodall-0599b2.netlify.app/">Netlify</a></div>
+<div>This project was coded by Luzia Fernandes at <a href="https://www.shecodes.io/" target="_blank" rel="noreferrer"> SheCodes </a> and is <a href="https://github.com/LuziaFernandes/react-appp" target="_blank" rel="noreferrer"> open-sourced on GitHub</a> and hosted on 
+<a href="https://pedantic-goodall-0599b2.netlify.app/" target="_blank" rel="noreferrer"> Netlify</a></div>
 </footer>
 </div>
 </div>
