@@ -1,22 +1,36 @@
 
 import './App.css';
-export default App;
 import React, { useState } from "react"; 
 import axios from 'axios';
+export default App;
 
 
 function App() {
   const [ready , setReady] = useState (false); 
-const [temperature, setTemperature] = useState (null);
+const [weatherData, setWeatherData] = useState ({});
 
 function handleResponse (response) {
-  setTemperature(response.main.data.temp);
+  console.log(response.data);
+  setWeatherData(
+    {  
+    temperature: response.data.main.temp, 
+    wind: response.data.wind.speed, 
+    cityName: response.data.name, 
+    description: response.data.weather[0].main,
+    icon: response.data.weather[0].icon, 
+    humidity: response.data.main.humidity
+    
+    });
+    
+    setReady(true);
 }
+
+
 if (ready) {
   return (
     <div className="App">
  <div className= "container">
- <img src="https://www.weather.shecodes.io/images/logo.png" alt="logotipo" width="150px" />
+ <img src="https://www.weather.shecodes.io/images/logo.png" alt="{weatherData.description}" width="150px" />
 <div className= "weatherApp">
 <form>
 <div className="row">
@@ -29,16 +43,16 @@ if (ready) {
 <div className="row">
 
 <div className="col-6 info-current-location">
-<h1>Porto</h1>
-<div class="emoji"><img src="http://www.openweathermap.org/img/wn/10d@2x.png" alt="weather-emoji" /> </div>
+<h1>{weatherData.cityName}</h1>
+<div class="emoji"><img src="http://www.openweathermap.org/img/wn/{weatherData.icon}@2x.png" alt="weather-emoji" /> </div>
 <p> 
-Description: clear sky
+Description: <span className="values"> {weatherData.description}  </span>
 <br/>
-Humidity: <span className="values"> </span> 19%, Wind: <span className="values"> </span> 10 Km/h
+Humidity: <span className="values"> {Math.round(weatherData.humidity)} % </span> , Wind: <span className="values">{Math.round(weatherData.wind)} Km/h</span> 
 </p>
 </div>
 
-<div className="col-6 currentTemperature" >{temperature}</div>
+<div className="col-6 currentTemperature" >{Math.round(weatherData.temperature)}</div>
 </div>
 </div>
 
@@ -92,11 +106,11 @@ Humidity: <span className="values"> </span> 19%, Wind: <span className="values">
 </div>
     </div>
   );
-} else {  let city = "Porto";
-let apiUrl= `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=bca44421f5ddd1ef8a0ab2b038d5824c&units=metric`;
+} else { 
+let city = "Porto";
+let apiUrl= `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=bca44421f5ddd1ef8a0ab2b038d5824c&units=metric`;
 axios.get(apiUrl).then(handleResponse);
 
-return "Loading...";
+return "Loading..."; 
 }
-
-
+}
