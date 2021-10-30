@@ -1,11 +1,20 @@
 
 import './App.css';
-import axios from "axios";
+export default App;
+import React, { useState } from "react"; 
+import axios from 'axios';
+
 
 function App() {
+  const [ready , setReady] = useState (false); 
+const [temperature, setTemperature] = useState (null);
+
+function handleResponse (response) {
+  setTemperature(response.main.data.temp);
+}
+if (ready) {
   return (
     <div className="App">
-      
  <div className= "container">
  <img src="https://www.weather.shecodes.io/images/logo.png" alt="logotipo" width="150px" />
 <div className= "weatherApp">
@@ -29,7 +38,7 @@ Humidity: <span className="values"> </span> 19%, Wind: <span className="values">
 </p>
 </div>
 
-<div className="col-6 currentTemperature" >19 ºC</div>
+<div className="col-6 currentTemperature" >{temperature}</div>
 </div>
 </div>
 
@@ -83,6 +92,11 @@ Humidity: <span className="values"> </span> 19%, Wind: <span className="values">
 </div>
     </div>
   );
+} else {  let city = "Porto";
+let apiUrl= `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=bca44421f5ddd1ef8a0ab2b038d5824c&units=metric`;
+axios.get(apiUrl).then(handleResponse);
+
+return "Loading...";
 }
 
-export default App;
+
