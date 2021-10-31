@@ -2,31 +2,31 @@
 import './App.css';
 import React, { useState } from "react"; 
 import axios from 'axios';
+import FormatDate from './FormatDate.js';
 export default App;
 
-
 function App() {
-  const [ready , setReady] = useState (false); 
-const [weatherData, setWeatherData] = useState ({});
+  
+const [weatherData, setWeatherData] = useState ({ ready: false});
 
 function handleResponse (response) {
   console.log(response.data);
   setWeatherData(
-    {  
+    {  ready: true, 
     temperature: response.data.main.temp, 
     wind: response.data.wind.speed, 
     cityName: response.data.name, 
     description: response.data.weather[0].main,
-    icon: response.data.weather[0].icon, 
-    humidity: response.data.main.humidity
+    humidity: response.data.main.humidity, 
+    date: new Date(response.data.dt * 1000), 
     
     });
     
-    setReady(true);
+   
 }
 
 
-if (ready) {
+if (weatherData.ready) {
   return (
     <div className="App">
  <div className= "container">
@@ -44,8 +44,10 @@ if (ready) {
 
 <div className="col-6 info-current-location">
 <h1>{weatherData.cityName}</h1>
-<div class="emoji"><img src="http://www.openweathermap.org/img/wn/{weatherData.icon}@2x.png" alt="weather-emoji" /> </div>
+<div class="emoji"><img src="http://www.openweathermap.org/img/wn/10d@2x.png" alt={weatherData.description} /> </div>
 <p> 
+<strong><FormatDate date={weatherData.date} /></strong>
+<br/>
 Description: <span className="values"> {weatherData.description}  </span>
 <br/>
 Humidity: <span className="values"> {Math.round(weatherData.humidity)} % </span> , Wind: <span className="values">{Math.round(weatherData.wind)} Km/h</span> 
@@ -63,32 +65,32 @@ Humidity: <span className="values"> {Math.round(weatherData.humidity)} % </span>
 
 <div className= "col-2"> 
 <div className="day"> Mon </div>
-<div class="emoji"><img src="http://www.openweathermap.org/img/wn/10d@2x.png" alt="weather-emoji" /> </div>
+<div class="emoji"><img src="http://www.openweathermap.org/img/wn/10d@2x.png" alt={weatherData.description} /> </div>
 <div className="temperatures-of-day"><span className="temperature-day-max"> 32º </span><span className="temperature-day-min"> 22º </span></div>
 </div>
 
 
 <div className= "col-2"> 
 <div className="day"> Tue </div>
-<div class="emoji"><img src="http://www.openweathermap.org/img/wn/10d@2x.png" alt="weather-emoji" /> </div>
+<div class="emoji"><img src="http://www.openweathermap.org/img/wn/10d@2x.png" alt={weatherData.description} /> </div>
 <div className="temperatures-of-day"><span className="temperature-day-max"> 32º </span><span className="temperature-day-min"> 22º </span></div>
 </div>
 
 <div className= "col-2"> 
 <div className="day"> Wed </div>
-<div class="emoji"><img src="http://www.openweathermap.org/img/wn/10d@2x.png" alt="weather-emoji" /> </div>
+<div class="emoji"><img src="http://www.openweathermap.org/img/wn/10d@2x.png" alt={weatherData.description} /> </div>
 <div className="temperatures-of-day"><span className="temperature-day-max"> 32º </span><span className="temperature-day-min"> 22º </span></div>
 </div>
 
 <div className= "col-2"> 
 <div className="day"> Thu </div>
-<div class="emoji"><img src="http://www.openweathermap.org/img/wn/10d@2x.png" alt="weather-emoji" /> </div>
+<div class="emoji"><img src="http://www.openweathermap.org/img/wn/10d@2x.png" alt={weatherData.description} /> </div>
 <div className="temperatures-of-day"><span className="temperature-day-max"> 32º </span><span className="temperature-day-min"> 22º </span></div>
 </div>
 
 <div className= "col-2"> 
 <div className="day"> Fri </div>
-<div class="emoji"><img src="http://www.openweathermap.org/img/wn/10d@2x.png" alt="weather-emoji" /> </div>
+<div class="emoji"><img src="http://www.openweathermap.org/img/wn/10d@2x.png" alt={weatherData.description} /> </div>
 <div className="temperatures-of-day"><span className="temperature-day-max"> 32º </span><span className="temperature-day-min"> 22º </span></div>
 </div>
 
