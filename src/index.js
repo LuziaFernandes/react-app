@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App cityDefault="Porto" />
   </React.StrictMode>,
   document.getElementById('root')
 );
