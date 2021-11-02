@@ -1,0 +1,23 @@
+.WeatherForecast {text-align: center;
+    margin-top: 40px;
+margin-bottom: 40px;
+margin-left: 100px;
+font-size: 40px;}
+
+.day {    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: rgba(39,33,66,.4);}
+  .temperature-day-max {    font-style: normal;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #f65282;
+    font-weight: 700;}
+  
+    .temperature-day-min {font-style: normal;
+        font-size: 18px;
+        line-height: 1.5;
+        color: #f65282;
+        font-weight: 700;
+        margin-left: 10px;
+    opacity: .6;}

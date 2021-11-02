@@ -3,6 +3,7 @@ import './App.css';
 import React, { useState } from "react"; 
 import axios from 'axios';
 import WeatherInfo from './WeatherInfo.js';
+import WeatherForecast from './WeatherForecast';
 export default App;
 
 function App(props) {
@@ -20,6 +21,7 @@ function handleResponse (response) {
     temperature: response.data.main.temp, 
     wind: response.data.wind.speed, 
     cityName: response.data.name, 
+    coordinates: response.data.coord,
     description: response.data.weather[0].main,
     humidity: response.data.main.humidity, 
     iconUrl: `http://www.openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
@@ -59,47 +61,7 @@ if (weatherData.ready) {
 
 <WeatherInfo data={weatherData} />
 
-
-<div className="next-five-days">
-
-<div className ="row">
-
-<div className= "col-2"> 
-<div className="day"> Mon </div>
-<div class="emoji"><img src="http://www.openweathermap.org/img/wn/10d@2x.png" alt={weatherData.description} /> </div>
-<div className="temperatures-of-day"><span className="temperature-day-max"> 32º </span><span className="temperature-day-min"> 22º </span></div>
-</div>
-
-
-<div className= "col-2"> 
-<div className="day"> Tue </div>
-<div class="emoji"><img src="http://www.openweathermap.org/img/wn/10d@2x.png" alt={weatherData.description} /> </div>
-<div className="temperatures-of-day"><span className="temperature-day-max"> 32º </span><span className="temperature-day-min"> 22º </span></div>
-</div>
-
-<div className= "col-2"> 
-<div className="day"> Wed </div>
-<div class="emoji"><img src="http://www.openweathermap.org/img/wn/10d@2x.png" alt={weatherData.description} /> </div>
-<div className="temperatures-of-day"><span className="temperature-day-max"> 32º </span><span className="temperature-day-min"> 22º </span></div>
-</div>
-
-<div className= "col-2"> 
-<div className="day"> Thu </div>
-<div class="emoji"><img src="http://www.openweathermap.org/img/wn/10d@2x.png" alt={weatherData.description} /> </div>
-<div className="temperatures-of-day"><span className="temperature-day-max"> 32º </span><span className="temperature-day-min"> 22º </span></div>
-</div>
-
-<div className= "col-2"> 
-<div className="day"> Fri </div>
-<div class="emoji"><img src="http://www.openweathermap.org/img/wn/10d@2x.png" alt={weatherData.description} /> </div>
-<div className="temperatures-of-day"><span className="temperature-day-max"> 32º </span><span className="temperature-day-min"> 22º </span></div>
-</div>
-
-</div>
-</div>
-
-
-
+<WeatherForecast coordinates={weatherData.coordinates} />
 
 <footer>
 <div>This project was coded by Luzia Fernandes at <a href="https://www.shecodes.io/" target="_blank" rel="noreferrer"> SheCodes </a> and is <a href="https://github.com/LuziaFernandes/react-appp" target="_blank" rel="noreferrer"> open-sourced on GitHub</a> and hosted on 
