@@ -15,8 +15,7 @@ const [city, setCity] = useState (props.cityDefault);
 
 
 function handleResponse (response) {
-  console.log(response.data);
-  setWeatherData(
+    setWeatherData(
     {  ready: true, 
     temperature: response.data.main.temp, 
     wind: response.data.wind.speed, 
@@ -48,7 +47,7 @@ if (weatherData.ready) {
   return (
     <div className="App">
  <div className= "container">
- <img src="https://www.weather.shecodes.io/images/logo.png" alt="{weatherData.description}" width="150px" />
+ <img src="https://www.weather.shecodes.io/images/logo.png" alt="SheCodes Logo" width="150px" />
 
 <div className= "weatherApp">
 
