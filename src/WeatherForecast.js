@@ -19,7 +19,7 @@ export default function WeatherForecast (props){
         
         <div className= "col-2"> 
         <div className="day"> {forecast[0].dt} </div>
-        <div className="emoji"><img src="http://www.openweathermap.org/img/wn/10d@2x.png" alt="lala" /> </div>
+        <div className="emoji"><img src="https://www.openweathermap.org/img/wn/10d@2x.png" alt="lala" /> </div>
         <div className="temperatures-of-day"><span className="temperature-day-max"> {forecast[0].temp.max}º </span><span className="temperature-day-min"> {forecast[0].temp.min}º </span></div>
         </div>
         

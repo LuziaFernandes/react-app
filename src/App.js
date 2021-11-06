@@ -24,13 +24,13 @@ function handleResponse (response) {
     coordinates: response.data.coord,
     description: response.data.weather[0].main,
     humidity: response.data.main.humidity, 
-    iconUrl: `http://www.openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+    iconUrl: `https://www.openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     date: new Date(response.data.dt * 1000), 
         });
     }
 
     function search () {
-      let apiUrl= `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=bca44421f5ddd1ef8a0ab2b038d5824c&units=metric`;
+      let apiUrl= `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=bca44421f5ddd1ef8a0ab2b038d5824c&units=metric`;
 axios.get(apiUrl).then(handleResponse);
     }
 
