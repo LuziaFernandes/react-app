@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import axios from 'axios';
 import WeatherInfo from './WeatherInfo.js';
 import WeatherForecast from './WeatherForecast';
+import LoaderSpinner from './LoaderSpinner';
 export default App;
 
 function App(props) {
@@ -72,6 +73,6 @@ if (weatherData.ready) {
   );
 } else { 
   search();
-  return "Loading..."; 
+  return (<LoaderSpinner />); 
 }
 }
