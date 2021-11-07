@@ -24,5 +24,6 @@ if (unit === "celsius") {
     <span className="WeatherTemperature">
     <div className="col-6 currentTemperature" >{Math.round(fahrenheit)}<span className="unit"> <a href="/" onClick={showCelsius}> ºC</a> | ºF </span> </div>
     </span>);}
+    
 
 }

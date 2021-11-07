@@ -36,6 +36,11 @@ footer {    font-size: 14px;
               border: none;
               height: 50px;}
 
+              @media (max-width: 576px) { 
+                footer {
+                    font-size: 10px;
+                    }
+                 }
    
   
 

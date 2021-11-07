@@ -47,8 +47,8 @@ axios.get(apiUrl).then(handleResponse);
 if (weatherData.ready) {
   return (
     <div className="App">
- <div className= "container">
- <img src="https://www.weather.shecodes.io/images/logo.png" alt="SheCodes Logo" width="150px" />
+ <div className= "container-fluid">
+ <img src="https://www.weather.shecodes.io/images/logo.png" alt="SheCodes Logo" width="150px" className="img-fluid" />
 
 <div className= "weatherApp">
 
@@ -69,6 +69,8 @@ if (weatherData.ready) {
 </footer>
 </div>
 </div>
+
+
     </div>
   );
 } else { 

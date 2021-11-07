@@ -25,8 +25,8 @@ function day(){
     return (
         <div className="WeatherForecastDay">
             
-    <div className="day"> {day} </div>
-<div className="emoji"><img src= {weatherIcon} alt={props.data.weather[0].description} /> </div>
+    <div className="day"> {day()} </div>
+<div className="emoji"><img src= {weatherIcon} alt={props.data.weather[0].description} className="img-fluid" /> </div>
 
 <div className="temperatures-of-day"><span className="temperature-day-max"> {maxTemperature()}C </span><span className="temperature-day-min"> {minTemperature()}C </span></div>
 

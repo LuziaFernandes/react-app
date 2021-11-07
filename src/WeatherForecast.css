@@ -21,3 +21,10 @@ font-size: 40px;}
         font-weight: 700;
         margin-left: 10px;
     opacity: .6;}
+
+    @media (max-width: 576px) { 
+        .WeatherForecast {text-align: center;
+            font-size: 10px;
+            margin: 2px;
+        }
+         }

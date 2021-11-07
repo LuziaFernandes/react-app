@@ -10,3 +10,9 @@
         line-height: 1;
         top: -34px;}
 .unit a {text-decoration: none;}
+
+@media (max-width: 576px) { 
+    .unit {
+      display: none;
+    }
+     }
