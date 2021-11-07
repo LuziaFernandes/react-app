@@ -47,7 +47,7 @@ axios.get(apiUrl).then(handleResponse);
 if (weatherData.ready) {
   return (
     <div className="App">
- <div className= "container-fluid">
+ <div className= "container container-fluid">
  <img src="https://www.weather.shecodes.io/images/logo.png" alt="SheCodes Logo" width="150px" className="img-fluid" />
 
 <div className= "weatherApp">
