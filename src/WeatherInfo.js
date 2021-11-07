@@ -18,7 +18,7 @@ Description: <span className="values"> {props.data.description}  </span>
 Humidity: <span className="values"> {Math.round(props.data.humidity)} % </span> , Wind: <span className="values">{Math.round(props.data.wind)} Km/h</span> 
 </p>
 </div>
-<div className="col-sm-6 ml-5">
+<div className="col-sm-6">
 <WeatherTemperature celsius={props.data.temperature} />
 </div>
 </div>
